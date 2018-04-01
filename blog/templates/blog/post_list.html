@@ -5,14 +5,12 @@
 	<title>Anton's blog</title>
 </head>
 <body>
-	<div>
-		<h1>Плюсы Питона</h1>
-		<ul>
-			<li>Это его очень гибкие фреймворки</li>
-			<li>Он очень мощный</li>
-			<li>Он даёт начальное представление о программировании</li>
-			<li>И то что у него очень простой синтаксис</li>
-		</ul>
-	</div>
+{% for post in posts %}
+    <div>
+    	<p>Дата публикации: {{ post.published_date }}</p>
+    	<h1><a href="#">{{ post.title }}</a></h1>
+    	<p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}	
 </body>
 </html>
